@@ -1,6 +1,5 @@
 // complete this js code
 
-
 class Person{
 	constructor(name,age){
 		this.name = name;
@@ -13,8 +12,6 @@ class Person{
 
 class Employee extends Person{
 	constructor(name, age , jobTitle){
-		// this.name= name;
-		// this.age= age;
 		super(name,age);
 		this.jobTitle = jobTitle
 	}
@@ -23,11 +20,11 @@ class Employee extends Person{
 	}
 }
 
-const person = new Person("Abhi", 22)
-person.greet()
+// const person = new Person("Abhi", 22)
+// person.greet()
 
-const employee = new Employee("kumar", 22, "SDE")
-employee.jobGreet()
+// const employee = new Employee("kumar", 22, "SDE")
+// employee.jobGreet()
 
 // Do not change code below this line
 window.Person = Person;
