@@ -27,7 +27,7 @@ class Employee extends Person{
 const person = new Person("Abhi", 22)
 person.greet()
 
-const employee = new Employee("kumar", 22, SDE)
+const employee = new Employee("kumar", 22, "SDE")
 employee.jobGreet()
 
 // Do not change code below this line
