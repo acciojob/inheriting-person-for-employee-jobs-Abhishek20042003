@@ -1,61 +1,31 @@
-
-
-// class Person{
-// 	constructor(name,age){
-// 		this.name = name;
-// 		this.age= age;
-// 	}
-// 	greet(){
-// 		console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`)
-// 	}
-// }
-
-// class Employee extends Person{
-// 	constructor(name, age , jobTitle){
-// 		// this.name= name;
-// 		// this.age= age;
-// 		super(name,age);
-// 		this.jobTitle = jobTitle
-// 	}
-// 	jobGreet(){
-// 		console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`)
-// 	}
-// }
-
-// // // Do not change code below this line
-// window.Person = Person;
-// window.Employee = Employee;
-
-
-class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    greet() {
-        console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
-    }
+// Person class
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
 }
 
-class Employee extends Person {
-    constructor(name, age, jobTitle) {
-        super(name, age); // Call the parent class constructor
-        this.jobTitle = jobTitle; // Assign the job title
-    }
+Person.prototype.greet = function () {
+  console.log(Hello, my name is ${this.name} and I am ${this.age} years old.);
+};
 
-    jobGreet() {
-        console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
-    }
+// Employee class inheriting from Person
+function Employee(name, age, jobTitle) {
+  // call parent constructor
+  Person.call(this, name, age);
+  this.jobTitle = jobTitle;
 }
 
-// Example usage
-const person = new Person("Alice", 25);
-person.greet(); // Expected Output: Hello, my name is Alice, I am 25 years old.
+// inherit from Person prototype
+Employee.prototype = Object.create(Person.prototype);
+Employee.prototype.constructor = Employee;
 
-const employee = new Employee("Bob", 30, "Manager");
-employee.jobGreet(); // Expected Output: Hello, my name is Bob, I am 30 years old, and my job title is Manager.
+// method for Employee
+Employee.prototype.jobGreet = function () {
+  console.log(
+    Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.
+  );
+};
 
 // Do not change code below this line
 window.Person = Person;
-window.Employee = Employee;
+window.Employee = Employee;
